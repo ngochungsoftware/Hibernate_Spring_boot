@@ -1,0 +1,32 @@
+<div class="container mt-5">
+        <div class="mb-3">
+            <label for="userSelect" class="form-label">Nhân Viên Đăng Sản Phẩm</label>
+            <select id="userSelect" class="form-select" ng-model="product.employeeId">
+                <option value="" hidden>-- Chọn Người Đăng --</option>
+                <option ng-repeat="user in listUser" value="{{user.id}}">{{user.name}}</option>
+            </select>
+            <div class="text-danger" ng-show="validate.idValidate">Vui lòng chọn người đăng</div>
+        </div>
+        <div class="mb-3">
+            <label for="titleInput" class="form-label">Link img</label>
+            <input type="text" class="form-control" id="titleInput" ng-model="product.img">
+            <div class="text-danger" ng-show="validate.imgValidate">Vui lòng nhập link sản phẩm</div>
+        </div>
+        <div class="mb-3">
+            <label for="titleInput" class="form-label">Tên sản phẩm</label>
+            <input type="text" class="form-control" id="titleInput" ng-model="product.nameProduct">
+            <div class="text-danger" ng-show="validate.imgValidate">Vui lòng nhập tên sản phẩm</div>
+        </div>
+        <div class="mb-3">
+            <label for="titleInput" class="form-label">Giá Bán</label>
+            <input type="text" class="form-control" id="titleInput" ng-model="product.price">
+            <div class="text-danger" ng-show="validate.imgValidate">Vui lòng nhập giá</div>
+        </div>
+        <div class="mb-3">
+            <label for="priceInput" class="form-label">Mô tả</label>
+            <input type="text" class="form-control" id="priceInput" ng-model="product.description" ng-change="changePrice()">
+            <div class="text-danger" ng-show="validate.priceValidate">Vui lòng nhập Mô tả</div>
+        </div>
+        <button class="btn btn-primary" ng-click="save()">Thêm mới</button>
+</div>
+
